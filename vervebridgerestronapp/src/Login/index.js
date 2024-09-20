@@ -22,7 +22,7 @@ class Login extends Component {
         const { identifier, password } = this.state;
 
         try {
-            const response = await axios.post('http://localhost:5000/api/user/login', { identifier, password });
+            const response = await axios.post('https://vervebridge.netlify.app/api/user/login', { identifier, password });
             console.log('Login successful, received token:', response.data.token);
             localStorage.setItem('token', response.data.token); // Store the token in localStorage
 
@@ -70,7 +70,7 @@ class Login extends Component {
                                     </span>
                                 </div>
                                 <button className="login-button" type="submit">Login</button>
-                                <p className="login-para">If you don't have an account, <a href="/signin">Sign In</a></p>
+                                <p className="login-para">If you don't have an account, <a href="/SignIn">Sign In</a></p>
                             </form>
                         </div>
                     </div>

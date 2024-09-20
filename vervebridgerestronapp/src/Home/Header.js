@@ -17,7 +17,7 @@ class Header extends Component {
 
         if (token) {
             try {
-                const response = await axios.get('http://localhost:5000/api/user/details', {
+                const response = await axios.get('https://vervebridge.netlify.app/api/user/details', {
                     headers: {
                         'Authorization': token
                     }
@@ -38,7 +38,7 @@ class Header extends Component {
     handleLogout = () => {
         localStorage.removeItem('token');
         this.setState({ user: null, showPopup: false });
-        this.props.history.push('/login');
+        this.props.history.push('/Login');
     };
 
     setActiveLink = (link) => {
@@ -157,7 +157,7 @@ class Header extends Component {
                                 ) : (
                                     <>
                                         <p>Please log in to continue</p>
-                                        <Link to="/login" onClick={this.togglePopup} className="btn btn-primary login-btn">Login</Link>
+                                        <Link to="/Login" onClick={this.togglePopup} className="btn btn-primary login-btn">Login</Link>
                                     </>
                                 )}
                             </div>
