@@ -17,7 +17,7 @@ class Header extends Component {
 
         if (token) {
             try {
-                const response = await axios.get('http://localhost:5000/api/user/details', {
+                const response = await axios.get('https://vervebridge.netlify.app/api/user/details', {
                     headers: {
                         'Authorization': token
                     }
