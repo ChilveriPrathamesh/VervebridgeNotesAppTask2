@@ -4,6 +4,7 @@ import { PiEyesFill } from "react-icons/pi";
 import axios from 'axios';
 import Header from "../Home/Header";
 import './index.css';
+import mainUrl from "../mainUrl";
 
 class Signin extends Component {
     state = {
@@ -35,7 +36,7 @@ class Signin extends Component {
         }
 
         try {
-            const response = await axios.post('https://vervebridge.netlify.app/api/user/register', { username, email, password });
+            const response = await axios.post(`${mainUrl}/api/user/register/`, { username, email, password });
             this.setState({ error: '', successMessage: response.data.message });
             setTimeout(() => {
                 this.props.history.push('/'); // Redirect to login page after a successful registration

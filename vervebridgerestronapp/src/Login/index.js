@@ -4,6 +4,7 @@ import { PiEyesFill } from 'react-icons/pi';
 import axios from 'axios';
 import Header from "../Home/Header";
 import './index.css';
+import mainUrl from "../mainUrl";
 
 class Login extends Component {
     state = {
@@ -22,7 +23,7 @@ class Login extends Component {
         const { identifier, password } = this.state;
 
         try {
-            const response = await axios.post('https://vervebridge.netlify.app/api/user/login', { identifier, password });
+            const response = await axios.post(`${mainUrl}/api/user/login`, { identifier, password });
             console.log('Login successful, received token:', response.data.token);
             localStorage.setItem('token', response.data.token); // Store the token in localStorage
 

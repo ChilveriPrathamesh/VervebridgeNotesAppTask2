@@ -9,7 +9,13 @@ const app = express();
 const PORT = 5000;
 const JWT_SECRET = 'mohan';
 
-app.use(cors());
+app.post('/api/user/login', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  // Rest of your login logic
+});
+
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost:27017/restron', {
@@ -93,6 +99,8 @@ app.post('/api/user/login', async (req, res) => {
       res.status(500).json({ error: 'Login failed' });
   }
 });
+
+app.get("/", (req, res)=> res.json({message: "HI NIthin"}))
 
 // Start the server
 app.listen(PORT, () => {
