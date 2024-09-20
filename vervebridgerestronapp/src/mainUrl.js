@@ -1,4 +1,4 @@
- const mainUrl="https://vervebridge-notes-app-task2-gla5.vercel.app";
+const mainUrl = "https://vervebridge-notes-app-task2.vercel.app";
 
-// const mainUrl="http://localhost:5000"
+//const mainUrl = "http://localhost:8000";
 export default mainUrl;

@@ -56,7 +56,9 @@ app.get("/api/user/details", authenticateToken, (req, res) => {
 // Register Route
 app.post("/api/user/register", async (req, res) => {
   try {
+    console.log("adfadf");
     const { username, email, password } = req.body;
+
     const existingUser = await User.findOne({ username });
 
     if (existingUser) {
