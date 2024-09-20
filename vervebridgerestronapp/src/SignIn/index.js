@@ -35,7 +35,7 @@ class Signin extends Component {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/api/user/register', { username, email, password });
+            const response = await axios.post('https://vervebridge.netlify.app/api/user/register', { username, email, password });
             this.setState({ error: '', successMessage: response.data.message });
             setTimeout(() => {
                 this.props.history.push('/'); // Redirect to login page after a successful registration
