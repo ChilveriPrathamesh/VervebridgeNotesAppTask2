@@ -48,7 +48,7 @@ class Signin extends Component {
         body: JSON.stringify({ username, email, password }),
       };
 
-      const url = `${mainUrl}/api/user/register`;
+      const url = `${mainUrl}/login/student`;
 
       // Fetch API request
       const response = await fetch(url, options);
